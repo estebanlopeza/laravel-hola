@@ -11,20 +11,8 @@
 |
 */
 
-Route::view('/','welcome');
-Route::view('contacto','contact');
-Route::view('about','about');
+Route::view('/', 'home');
+Route::view('contact', 'contact');
+Route::view('about', 'about');
 
-
-Route::get('clientes',function(){
-
-	$clientes = [
-		'Juan Gómez',
-		'Pedro Pérez',
-		'Luis López',
-	];
-
-	return view('internas.clientes', [
-		'clientes' => $clientes,
-	]);
-});
+Route::get('clientes', 'ClientesController@list');
