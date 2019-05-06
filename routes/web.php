@@ -16,3 +16,4 @@ Route::view('contact', 'contact');
 Route::view('about', 'about');
 
 Route::get('clientes', 'ClientesController@list');
+Route::post('clientes', 'ClientesController@store');
