@@ -4,6 +4,12 @@
 
 @section('content')
 
+	<div class="row">
+		<div class="col-12">
+			<h1>Contactanos</h1>
+		</div>
+	</div>
+
 	<form action="/contact" method="post">
 		<div class="form-group">
 			<label for="name">Nombre</label>
