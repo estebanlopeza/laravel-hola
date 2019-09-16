@@ -28,6 +28,7 @@ Route::patch('clientes/{cliente}', 'ClientesController@update');
 Route::delete('clientes/{cliente}', 'ClientesController@destroy');
 */
 Route::resource('clientes', 'ClientesController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
