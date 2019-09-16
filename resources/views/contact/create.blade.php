@@ -10,6 +10,7 @@
 		</div>
 	</div>
 
+	@if( ! session()->has('message') )
 	<form action="/contact" method="post">
 		<div class="form-group">
 			<label for="name">Nombre</label>
@@ -34,5 +35,6 @@
 	<button type="submit" class="btn btn-primary">Enviar</button>
 
 	</form>
+	@endif
 
 @endsection
