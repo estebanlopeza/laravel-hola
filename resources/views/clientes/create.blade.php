@@ -12,12 +12,11 @@
 
 	<div class="row">
 		<div class="col-12">
-			<form action="/clientes" method="post">
+			<form action="{{ route('clientes.store') }}" method="post">
 
 				@include('clientes.form');
 
 				<button type="submit" class="btn btn-primary">Enviar</button>
-
 
 			</form>
 		</div>

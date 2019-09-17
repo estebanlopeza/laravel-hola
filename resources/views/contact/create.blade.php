@@ -11,7 +11,7 @@
 	</div>
 
 	@if( ! session()->has('message') )
-	<form action="/contact" method="post">
+	<form action="{{ route('contact.store') }}" method="post">
 		<div class="form-group">
 			<label for="name">Nombre</label>
 			<input type="text" class="form-control" id="name" name="name" value="{{ @old(name) }}">

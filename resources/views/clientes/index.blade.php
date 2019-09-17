@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-12">
 			<h1>Listado de clientes</h1>
-			<p><a href="clientes/create">Agregar cliente</a></p>
+			<p><a href="{{ route('clientes.create') }}">Agregar cliente</a></p>
 		</div>
 	</div>
 
