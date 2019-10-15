@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+
+                    <my-button text="Mi nuevo botoncito" type="submit"></my-button>
                 </div>
             </div>
         </div>

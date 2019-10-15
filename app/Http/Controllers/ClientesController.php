@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Company;
+use App\Events\NewClienteHasRegisteredEvent;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -30,9 +31,11 @@ class ClientesController extends Controller
 
     public function store(){
 
-    	Cliente::create($this->validateRequest());
+    	$cliente = Cliente::create($this->validateRequest());
 
-    	return redirect('clientes');
+        event(new NewClienteHasRegisteredEvent($cliente));
+
+    	//return redirect('clientes');
 
     }
 
