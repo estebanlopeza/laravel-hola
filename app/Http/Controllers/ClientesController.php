@@ -35,7 +35,7 @@ class ClientesController extends Controller
 
         event(new NewClienteHasRegisteredEvent($cliente));
 
-    	//return redirect('clientes');
+    	return redirect('clientes');
 
     }
 
