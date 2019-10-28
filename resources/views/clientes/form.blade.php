@@ -1,13 +1,13 @@
 <div class="form-group">
 	<label for="name">Nombre</label>
 	<input type="text" class="form-control" id="name" name="name" value="{{ @old(name) ?? $cliente->name }}">
-	<p>{{ $errors->first('name') }}</p>
+	<div>{{ $errors->first('name') }}</div>
 </div>
 
 <div class="form-group">
 	<label for="email">Email</label>
 	<input type="text" class="form-control" id="email" name="email" value="{{ @old(email) ?? $cliente->email }}">
-	<p>{{ $errors->first('email') }}</p>
+	<div>{{ $errors->first('email') }}</div>
 </div>
 
 <div class="form-group">
@@ -27,6 +27,12 @@
     	<option value="{{ $company->id }}" {{ $company->id == $cliente->company_id ? 'selected' : '' }} >{{ $company->name }}</option>
     	@endforeach
 	</select>
+</div>
+
+<div class="form-group d-flex flex-column">
+    <label for="image">Imagen</label>
+        <input type="file" name="image" class="py-2">
+        <div>{{ $errors->first('image') }}</div>
 </div>
 
 @csrf

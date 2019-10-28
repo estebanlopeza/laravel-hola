@@ -26,4 +26,10 @@
 		</div>
 	</div>
 
+	@if($cliente->image)
+		<div class="row">
+			<div class="col-12"><img src="{{ asset('storage/'.$cliente->image) }}" alt="" class="img-thumbnail"></div>
+		</div>
+	@endif
+
 @endsection

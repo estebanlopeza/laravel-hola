@@ -12,7 +12,7 @@
 
 	<div class="row">
 		<div class="col-12">
-			<form action="{{ route('clientes.store') }}" method="post">
+			<form action="{{ route('clientes.store') }}" method="post" enctype="multipart/form-data">
 
 				@include('clientes.form');
 

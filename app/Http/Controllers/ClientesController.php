@@ -33,6 +33,8 @@ class ClientesController extends Controller
 
     	$cliente = Cliente::create($this->validateRequest());
 
+        $this->storeImage($cliente);
+
         event(new NewClienteHasRegisteredEvent($cliente));
 
     	return redirect('clientes');
@@ -53,14 +55,9 @@ class ClientesController extends Controller
 
     public function update(Cliente $cliente){
 
-        $data = request()->validate([
-            'name' => 'required|min:3',
-            'email' => 'required|email',
-            'active' => 'required',
-            'company_id' => 'required',
-        ]);
-
         $cliente->update($this->validateRequest());
+
+        $this->storeImage($cliente);
 
         return redirect('clientes/' . $cliente->id);
     }
@@ -79,7 +76,19 @@ class ClientesController extends Controller
             'email' => 'required|email',
             'active' => 'required',
             'company_id' => 'required',
+            'image' => 'sometimes|image|max:5000',
         ]);
+
+    }
+
+    private function storeImage($cliente){
+
+        if(request()->has('image')){
+            $cliente->update([
+                'image' => request()->image->store('uploads', 'public'),
+            ]);
+        }
+
     }
 
 }
